@@ -1,0 +1,141 @@
+.image-search-container {
+  text-align: center;
+  padding: 50px;
+  background: linear-gradient(135deg, #fdfbfb, #ebedee);
+  min-height: 100vh;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.image-search-container h2 {
+  font-size: 2.8rem;
+  color: #34495e;
+  margin-bottom: 30px;
+  font-family: "Poppins", sans-serif;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+  letter-spacing: 1.2px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.image-search-container h2:hover {
+  transform: scale(1.08);
+}
+
+/* Restaurant Cards */
+.restaurant-card {
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 18px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  padding: 30px;
+  margin: 25px auto;
+  max-width: 700px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(8px);
+}
+
+.restaurant-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+}
+
+.restaurant-card::before {
+  content: "";
+  position: absolute;
+  width: 500%;
+  height: 500%;
+  top: 50%;
+  left: 50%;
+  background: rgba(52, 73, 94, 0.1);
+  transition: all 0.5s ease-in-out;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+}
+
+.restaurant-card:hover::before {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 0;
+}
+
+/* Restaurant Name */
+.restaurant-name {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 10px;
+  text-transform: capitalize;
+  transition: color 0.3s ease;
+}
+
+.restaurant-name:hover {
+  color: #2980b9;
+}
+
+/* Restaurant Info */
+.restaurant-info {
+  font-size: 1.2rem;
+  color: #555;
+  margin-top: 12px;
+  line-height: 1.7;
+}
+
+/* Restaurant Image */
+.restaurant-image {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  margin-top: 20px;
+  transition: transform 0.3s ease;
+}
+
+.restaurant-card:hover .restaurant-image {
+  transform: scale(1.07);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Search Button */
+.search-button {
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  color: white;
+  font-size: 1.2rem;
+  padding: 14px 35px;
+  border-radius: 40px;
+  transition: all 0.3s ease;
+  margin-top: 30px;
+  font-weight: bold;
+  border: none;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.search-button:hover {
+  background: linear-gradient(135deg, #2980b9, #1f618d);
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .image-search-container {
+      padding: 40px;
+  }
+
+  .image-search-container h2 {
+      font-size: 2.2rem;
+  }
+
+  .restaurant-card {
+      max-width: 95%;
+  }
+
+  .restaurant-name {
+      font-size: 1.6rem;
+  }
+
+  .restaurant-info {
+      font-size: 1.05rem;
+  }
+}
