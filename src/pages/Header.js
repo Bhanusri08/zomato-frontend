@@ -17,25 +17,32 @@ const Header = () => {
   return (
     <AppBar position="sticky" className="header-appbar">
       <Toolbar className="header-toolbar">
-        <Typography variant="h6" className="header-title">
+        {/* Home Button on the Left */}
+        <Button
+          className="header-button"
+          style={{ backgroundColor: "#ff5722", color: "white" }}
+          onClick={handleHomeClick}
+        >
+          Home
+        </Button>
+
+        {/* Centered Title */}
+        <Typography
+          variant="h6"
+          className="header-title"
+          style={{ flexGrow: 1, textAlign: "center" }}
+        >
           FlavorFind
         </Typography>
-        <div className="header-buttons">
-          <Button
-            className="header-button"
-            style={{ backgroundColor: "#ff5722", color: "white" }}
-            onClick={handleHomeClick}
-          >
-            Home
-          </Button>
-          <Button
-            className="header-button"
-            style={{ backgroundColor: "#ff5722", color: "white" }}
-            onClick={handleRestaurantClick}
-          >
-            Restaurants
-          </Button>
-        </div>
+
+        {/* Restaurants Button on the Right */}
+        <Button
+          className="header-button"
+          style={{ backgroundColor: "#ff5722", color: "white" }}
+          onClick={handleRestaurantClick}
+        >
+          Restaurants
+        </Button>
       </Toolbar>
     </AppBar>
   );

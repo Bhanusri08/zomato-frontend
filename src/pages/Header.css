@@ -1,135 +1,83 @@
-/* Root Variables for Dynamic Colors */
+/* Root Variables */
 :root {
-  --primary-color: #0f2027; /* Dark Blue */
-  --secondary-color: #203a43; /* Deep Teal */
-  --tertiary-color: #2c5364; /* Ocean Blue */
-  --border-color: #0a1c27;
-  --button-gradient-start: #ff7e5f; /* Sunset Orange */
-  --button-gradient-end: #feb47b; /* Warm Peach */
-  --text-color: #ffffff;
+  --primary-gradient: rgba(0, 0, 0, 0.7); /* Changed to transparent black */
+  --hover-gradient: rgba(0, 0, 0, 0.9); /* Darker shade on hover */
+  --text-color: #ffffff; /* Adjusted for better contrast */
   --shadow-color: rgba(0, 0, 0, 0.3);
+  --button-color: #ff758c;
+  --button-hover: #ff6a88;
 }
 
-/* Header Container with Opacity Effect */
+/* Header Styling */
 .header-appbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  padding: 20px 50px;
-  border-bottom: 5px solid var(--border-color);
-  border-radius: 0 0 25px 25px;
-  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color), var(--tertiary-color));
+  background: var(--primary-gradient); /* Transparent black */
   box-shadow: 0 4px 12px var(--shadow-color);
-  transition: background 0.5s ease-in-out, opacity 0.3s ease-in-out;
-  opacity: 0.95;
+  border-bottom: 3px solid var(--button-color);
+  height: 65px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  transition: background 0.3s ease-in-out;
 }
 
-/* Change opacity on hover */
-.header-appbar:hover {
-  opacity: 1;
-}
-
-/* Toolbar with Flexible Layout */
+/* Toolbar Layout */
 .header-toolbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1400px;
-  margin: 0 auto;
+  width: 100%;
 }
 
 /* Title Styling */
 .header-title {
-  font-size: 2.8rem;
-  font-weight: 900;
+  font-size: 1.8rem;
+  font-weight: 800;
   color: var(--text-color);
-  letter-spacing: 2px;
   text-transform: uppercase;
-  text-shadow: 4px 4px 15px var(--shadow-color);
-  transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
-}
-
-/* Title Effect on Hover */
-.header-title:hover {
-  transform: scale(1.05);
-  color: #ffe0b2; /* Light Gold */
-}
-
-/* Buttons Container */
-.header-buttons {
-  display: flex;
-  justify-content: flex-end;
-  gap: 25px;
+  letter-spacing: 1.5px;
+  text-shadow: 2px 2px 5px var(--shadow-color);
+  flex-grow: 1;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
 }
 
 /* Button Styling */
 .header-button {
-  font-size: 1.4rem;
-  font-weight: 700;
-  padding: 14px 40px;
-  border: 3px solid transparent;
-  border-radius: 50px;
-  text-transform: uppercase;
-  letter-spacing: 1.2px;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 10px 22px;
+  color: white;
+  background: var(--button-color);
+  border-radius: 25px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 5px 15px rgba(255, 118, 136, 0.3);
+  border: none;
   cursor: pointer;
-  color: #fff;
-  background: linear-gradient(45deg, var(--button-gradient-start), var(--button-gradient-end));
-  box-shadow: 0 5px 20px rgba(255, 126, 95, 0.5);
-  transition: all 0.3s ease-in-out, transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  text-transform: uppercase;
 }
 
-/* Button Hover Effects */
 .header-button:hover {
-  background: linear-gradient(45deg, var(--button-gradient-end), var(--button-gradient-start));
-  transform: translateY(-4px) scale(1.05);
-  box-shadow: 0 8px 25px rgba(255, 190, 120, 0.7);
-  border: 3px solid rgba(255, 255, 255, 0.5);
+  background: var(--button-hover);
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(255, 118, 136, 0.4);
 }
 
-/* Active Button Effect */
-.header-button:active {
-  transform: translateY(2px) scale(0.98);
-  box-shadow: 0 4px 12px rgba(255, 190, 120, 0.5);
+/* Leftmost and Rightmost Buttons */
+.left-button {
+  margin-right: auto;
 }
 
-/* Additional Button Variants */
-.header-button.secondary {
-  background: linear-gradient(45deg, #56ccf2, #2f80ed); /* Cool Blue */
-  box-shadow: 0 5px 20px rgba(86, 204, 242, 0.5);
-}
-
-.header-button.secondary:hover {
-  background: linear-gradient(45deg, #2f80ed, #56ccf2);
-  box-shadow: 0 8px 25px rgba(86, 204, 242, 0.7);
-}
-
-/* Ghost Button */
-.header-button.ghost {
-  background: transparent;
-  border: 3px solid var(--text-color);
-  color: var(--text-color);
-  box-shadow: none;
-}
-
-.header-button.ghost:hover {
-  background: var(--text-color);
-  color: var(--primary-color);
+.right-button {
+  margin-left: auto;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
   .header-title {
-    font-size: 2.2rem;
+    font-size: 1.5rem;
   }
-
   .header-button {
-    font-size: 1.2rem;
-    padding: 12px 30px;
-  }
-
-  .header-buttons {
-    gap: 15px;
+    padding: 8px 18px;
+    font-size: 0.9rem;
   }
 }

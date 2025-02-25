@@ -1,178 +1,179 @@
-/* Restaurant Detail Container */
+/* 🌟 Futuristic Restaurant Detail Page */
 .restaurant-detail-container {
   padding: 50px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 1));
+  color: #f8f8f8;
   min-height: 100vh;
-  background: linear-gradient(135deg, #ece9e6, #ffffff);
+  position: relative;
 }
 
-/* Restaurant Header */
-.restaurant-header {
+/* ✨ Blur Effect Without Backdrop */
+.restaurant-detail-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  filter: blur(12px); /* Frosted glass effect */
+  z-index: -1;
+}
+
+/* 📌 Restaurant Header */
+.restaurant-header {
+  width: 80%;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-bottom: 25px;
 }
 
-/* Restaurant Image */
+/* 🍽 Restaurant Image with Hover Glow */
 .restaurant-image {
-  width: 55%;
-  height: auto;
+  width: 70%;
+  max-height: 400px;
   object-fit: cover;
-  border-radius: 20px;
+  border-radius: 15px;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
   margin: 0 auto;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
 }
 
 .restaurant-image:hover {
-  transform: scale(1.07);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transform: scale(1.08);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.8);
 }
 
-/* Restaurant Info */
+/* 🏷 Restaurant Info Section */
 .restaurant-info {
   text-align: center;
-  width: 60%;
-  margin-top: 15px;
+  width: 70%;
+  margin-top: 20px;
 }
 
-/* Restaurant Name */
+/* ✨ Restaurant Name Styling */
 .restaurant-name {
   font-size: 32px;
   font-weight: bold;
-  color: #2c3e50;
-  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-  text-transform: capitalize;
-  transition: color 0.3s ease, transform 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.restaurant-name:hover {
-  color: #6a1b9a;
-  transform: scale(1.05);
-}
-
-/* Cuisine Type */
+/* 🍜 Cuisine Type */
 .restaurant-cuisine {
   font-size: 20px;
-  color: #555;
   font-weight: 500;
-  margin-top: 5px;
+  color: #bbb;
 }
 
-/* Restaurant Details Box */
+/* 📦 Restaurant Details Box */
 .restaurant-details-box {
-  width: 55%;
+  width: 70%;
   padding: 25px;
-  background: rgba(255, 255, 255, 0.3);
-  border-radius: 15px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
   text-align: left;
   margin-top: 25px;
-  backdrop-filter: blur(10px);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
 }
 
-.restaurant-details-box:hover {
-  transform: scale(1.02);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+/* ✨ Alternative Filter for Glassmorphic Effect */
+.restaurant-details-box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  filter: blur(10px);
+  z-index: -1;
 }
 
-/* Details Heading */
+/* 📝 Section Headers */
 .restaurant-details-box h4 {
   font-size: 24px;
-  margin-bottom: 15px;
-  color: #333;
-  font-weight: 700;
+  margin-bottom: 12px;
+  color: #fff;
 }
 
-/* Details Text */
+/* 📖 Text Details */
 .restaurant-details-box p {
   font-size: 18px;
-  color: #444;
-  line-height: 1.6;
-  margin-bottom: 10px;
+  color: #ccc;
+  margin-bottom: 15px;
 }
 
-/* Menu Link */
+/* 🔗 Menu Link */
 .menu-url {
   margin-top: 20px;
   text-align: center;
 }
 
 .menu-link {
-  color: #1976d2;
+  color: #00c6ff;
   text-decoration: none;
-  font-weight: 600;
   font-size: 18px;
-  transition: color 0.3s ease, text-shadow 0.3s ease;
+  font-weight: 700;
+  transition: all 0.3s ease-in-out;
 }
 
 .menu-link:hover {
-  color: #1565c0;
-  text-shadow: 0 2px 10px rgba(21, 101, 192, 0.3);
+  color: #00ffff;
+  text-shadow: 0 0 12px rgba(0, 255, 255, 0.7);
 }
 
-/* Booking Button */
-.book-button {
-  display: inline-block;
-  margin-top: 25px;
-  background: linear-gradient(135deg, #28a745, #218838);
+/* 🛒 Book Now Button */
+.restaurant-info .book-button {
+  margin-top: 20px;
+  background: linear-gradient(90deg, #28a745, #20c997);
   color: white;
   font-size: 18px;
-  padding: 12px 25px;
-  border-radius: 10px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
-  text-transform: uppercase;
   font-weight: bold;
+  padding: 12px 25px;
+  border-radius: 8px;
+  text-transform: uppercase;
   cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 0 10px rgba(40, 167, 69, 0.6);
   border: none;
-  outline: none;
-  box-shadow: 0 6px 15px rgba(40, 167, 69, 0.2);
 }
 
-.book-button:hover {
-  transform: scale(1.08);
-  box-shadow: 0 10px 25px rgba(40, 167, 69, 0.4);
-  background: linear-gradient(135deg, #218838, #1e7e34);
+.restaurant-info .book-button:hover {
+  background: linear-gradient(90deg, #20c997, #28a745);
+  box-shadow: 0 0 20px rgba(40, 167, 69, 0.9);
+  transform: scale(1.05);
 }
 
-/* Responsive Design */
+/* 📱 Responsive Design */
 @media (max-width: 768px) {
-  .restaurant-image {
-      width: 80%;
+  .restaurant-detail-container {
+      padding: 30px 15px;
   }
 
-  .restaurant-info {
-      width: 85%;
-  }
-
-  .restaurant-details-box {
-      width: 85%;
+  .restaurant-header, .restaurant-info, .restaurant-details-box {
+      width: 90%;
   }
 
   .restaurant-name {
-      font-size: 28px;
+      font-size: 26px;
   }
 
   .restaurant-cuisine {
-      font-size: 16px;
+      font-size: 18px;
   }
 
-  .restaurant-details-box h4 {
-      font-size: 20px;
-  }
-
-  .restaurant-details-box p {
-      font-size: 16px;
-  }
-
-  .book-button {
-      font-size: 16px;
-      padding: 10px 20px;
+  .restaurant-image {
+      width: 90%;
   }
 }
